@@ -1,4 +1,5 @@
-import FilePathAttr
+from FilePathAttr import FilePathAttr
+from datetime import datetime
 
 class Sc2ReaderFilePathAttr(FilePathAttr):
 
@@ -18,14 +19,14 @@ class Sc2ReaderFilePathAttr(FilePathAttr):
         pass
 
     def _get_date(self, replay, datestring="%Y-%m-%D"):
-        pass
+        return replay.date.strftime(datestring)
 
     def _get_teams(self, replay, teamstring="{name}"):
         pass
 
     def _get_map(self, replay):
-        pass
+        return replay.map_name
 
     def _get_length(self, replay):
-        pass
+        return replay.length.seconds
 
